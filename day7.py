@@ -1,13 +1,13 @@
 #part 1 - with help from reddit solutions
-fname = 'C:\\Users\lenna\Data_Transfer_HHU_Mac\PostDoc\Advent_of_code/Day8.txt'
+from statistics import median, mean
 
-counter = 0
-with open(fname, "r") as f:
-    for line in f:
-        segments, digits = line.strip().split("|")
-        digits = digits.strip().split(" ")
-        for d in digits:
-            if len(d) in (2, 4, 3, 7):
-                counter += 1
+fname = 'C:\\Users\lenna\Data_Transfer_HHU_Mac\PostDoc\Advent_of_code/Day7.txt'
 
-print(counter)
+with open(fname, 'r') as f:
+    data = list(map(int, f.readline().strip().split(",")))
+
+median_pos = median(data)
+print(int(sum(abs(crab - median_pos) for crab in data)))
+
+#part 2 - again with help from reddit solutions
+print(min(sum(abs(crab - pos) * (abs(crab - pos) + 1) / 2 for pos in data) for crab in data)) 
