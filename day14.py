@@ -2,7 +2,6 @@
 from collections import Counter
 
 fname = 'C:\\Users\lenna\Data_Transfer_HHU_Mac\PostDoc\Advent_of_code/Day14.txt'
-from collections import Counter
 
 with open(fname) as f:
     data = [line.strip() for line in f.readlines()]
